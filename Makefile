@@ -2,7 +2,7 @@ DEBUG = n
 
 TITLE_ID = OGOGOGOGO
 TARGET   = ogogogogo
-OBJS     = shareObject.o world.o hid.o avatar.o oggo.o
+OBJS     = MatAdaptor.o shareObject.o world.o hid.o avatar.o oggo.o
 PSVITAIP = 192.168.50.82
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lSceTouch_stub -lScePgf_stub -lScePvf_stub \

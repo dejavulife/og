@@ -24,11 +24,24 @@ void avatar::process(shareObj* shobj)
     vita2d_start_drawing();
     vita2d_clear_screen();
     //draw something here
+    drawscreen(shobj->mad);
     mydoing(shobj);
     vita2d_end_drawing();
     vita2d_swap_buffers();
+
 }
 
+void avatar::drawscreen(MatAdaptor* mad)
+{
+	if ( !mad ) {
+		return;
+	} 
+	vita2d_texture* tx = mad->getTexture(1);
+	if ( tx == NULL ) {
+		return;
+	}
+	vita2d_draw_texture(tx, 0, 0);
+}
 
 void avatar::mydoing(shareObj* shobj)
 {

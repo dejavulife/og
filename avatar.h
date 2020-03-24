@@ -2,6 +2,7 @@
 #define _OG_AVATAR_H
 #include <vita2d.h>
 #include "shareObject.h"
+#include "MatAdaptor.h"
 
 class avatar
 {
@@ -16,6 +17,7 @@ class avatar
     void process(shareObj* shobj);
     private:
         void mydoing(shareObj* shobj);
+		void drawscreen(MatAdaptor* mad);
 };
 
 

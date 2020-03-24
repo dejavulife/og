@@ -12,7 +12,8 @@ class world
     void shutdown();
     void process(shareObj* shobj);
     private:
-        void mydoing();
+		MatAdaptor matada;
+        void mydoing(shareObj* shobj);
 };
 
 #endif
