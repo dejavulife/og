@@ -28,7 +28,6 @@ void avatar::process(shareObj* shobj)
     mydoing(shobj);
     vita2d_end_drawing();
     vita2d_swap_buffers();
-
 }
 
 void avatar::drawscreen(MatAdaptor* mad)

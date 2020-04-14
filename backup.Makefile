@@ -2,17 +2,17 @@ DEBUG = n
 
 TITLE_ID = OGOGOGOGO
 TARGET   = ogogogogo
-OBJS     = matAdaptor.o shareObject.o world.o hid.o avatar.o oggo.o
+OBJS     = MatAdaptor.o shareObject.o world.o hid.o avatar.o oggo.o
 PSVITAIP = 192.168.50.82
-LIBS =  -lopencv_imgcodecs -lopencv_imgproc -lopencv_core \
-	-lvita2d -lSceDisplay_stub -lSceGxm_stub \
+LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lSceTouch_stub -lScePgf_stub -lScePvf_stub \
-	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc -lpthread 
+	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc \
+	-lopencv_core -lopencv_imgproc -lopencv_imgcodecs
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
 CXX     = $(PREFIX)-g++
-CFLAGS  = -g3 -Wl,-q -Wall -fno-lto
+CFLAGS  = -Wl,-q -Wall -fno-lto
 ASFLAGS = $(CFLAGS)
 
 ifeq ($(DEBUG),y)
@@ -22,7 +22,7 @@ else
 endif
 
 CFLAGS += $(DEBFLAGS)
-CXXFLAGS += -g3 -c -lstd=c++11
+CXXFLAGS += -c -lstd=c++11
 
 LIVEAREA = -a sce_sys/icon0.png=sce_sys/icon0.png \
 		   -a sce_sys/livearea/contents/bg.png=sce_sys/livearea/contents/bg.png \
@@ -43,7 +43,7 @@ eboot.bin: $(TARGET).velf
 	vita-elf-create $< $@
 
 $(TARGET).elf: $(OBJS)
-	$(CXX) $^ $(LIBS) -o $@ $(CFLAGS)
+	$(CXX) $(CFLAGS) $^ $(LIBS) -o $@
 
 %.o: %.cpp
 	${CXX}  -o $@ $< $(CXXFLAGS)

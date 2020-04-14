@@ -1,6 +1,6 @@
 #ifndef _OG_SHAREOBJECT_H
 #define _OG_SHAREOBJECT_H
-#include "MatAdaptor.h"
+#include "matAdaptor.h"
 
 class shareObj
 {

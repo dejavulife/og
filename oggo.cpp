@@ -1,11 +1,12 @@
-extern "C"
-{
 
 #include "world.h"
 #include "hid.h"
 #include "avatar.h"
 #include "shareObject.h"
 #include <psp2/kernel/processmgr.h>
+
+//extern "C"
+//{
 
 shareObj sobj;
 
@@ -33,4 +34,4 @@ int main()
     sobj.shutdown();
     sceKernelExitProcess(0);
 }
-}
+//}

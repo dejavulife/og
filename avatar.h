@@ -2,7 +2,7 @@
 #define _OG_AVATAR_H
 #include <vita2d.h>
 #include "shareObject.h"
-#include "MatAdaptor.h"
+#include "matAdaptor.h"
 
 class avatar
 {

@@ -1,0 +1,2 @@
+vita-elf-create: No relocation sections in binary; use -Wl,-q while compiling
+make: *** [ogogogogo.velf] Error 1
